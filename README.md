@@ -1,55 +1,69 @@
-# Customer Lifetime Value (CLTV) Prediction with RFM Segmentation and XGBoost
+# 📊 Customer Lifetime Value (CLTV) Prediction with RFM Segmentation and XGBoost
 
 ---
 
 ## 📈 Project Overview
 
-In modern business, understanding customer value is critical for maximizing returns on marketing investments[cite: 6, 8]. [cite_start]This project focuses on predicting **Customer Lifetime Value (CLV)**, which helps in identifying high-value customers, enhancing marketing ROI, and enabling proactive business strategies[cite: 4, 9].
+In modern business, understanding customer value is critical for maximizing returns on marketing investments. This project focuses on predicting **Customer Lifetime Value (CLV)**, which helps in identifying high-value customers, enhancing marketing ROI, and enabling proactive business strategies.
 
-[cite_start]This analysis uses a dataset of customer transactions to engineer predictive features, perform **RFM (Recency, Frequency, Monetary) segmentation**, and build a machine learning model to forecast future customer value[cite: 9, 21]. [cite_start]The primary goal is to move beyond historical data and proactively predict which customers will be the most valuable over a future period[cite: 10].
+This analysis uses customer transaction data to engineer predictive features, perform **RFM (Recency, Frequency, Monetary) segmentation**, and build a machine learning model to forecast future customer value. The primary goal is to move beyond historical data and proactively predict which customers will be the most valuable over a future period.
 
 ---
 
 ## 🚀 Key Features
 
-* **Advanced Feature Engineering**: Creation of key predictive features from raw transaction data. [cite_start]The foundation of the analysis is built on RFM metrics[cite: 21, 47]:
-    * [cite_start]**Recency**: Days since the customer's last purchase[cite: 48].
-    * [cite_start]**Frequency**: Total number of transactions per customer[cite: 49].
-    * [cite_start]**Monetary Value**: Total revenue contributed by each customer[cite: 50].
-    * [cite_start]Additional metrics like average purchase value and interaction features were also engineered to improve accuracy[cite: 24, 26].
+- **Advanced Feature Engineering**:  
+  Creation of predictive features from raw transaction data, with focus on:
+  - **Recency**: Days since the customer's last purchase  
+  - **Frequency**: Total number of transactions per customer  
+  - **Monetary Value**: Total revenue contributed by each customer  
+  Additional metrics like average purchase value and interaction features were engineered to improve accuracy.
 
-* [cite_start]**RFM Customer Segmentation**: Unsupervised machine learning (K-Means clustering) is used to segment customers into distinct groups for Recency, Frequency, and Monetary value[cite: 102]. [cite_start]These individual scores are then combined into an overall RFM score to categorize customers as Low, Mid, or High-Value[cite: 99, 100, 101, 378].
+- **RFM Customer Segmentation**:  
+  Unsupervised machine learning (**K-Means clustering**) is used to segment customers into groups based on R, F, and M scores.  
+  These are combined into an overall **RFM score** to categorize customers as **Low, Mid, or High-Value**.
 
-* [cite_start]**CLTV Calculation**: The model is trained to predict CLTV over a **6-month horizon**[cite: 383]. [cite_start]Historical data from a 3-month window is used to generate features that predict revenue in the subsequent 6 months[cite: 22].
+- **CLTV Calculation**:  
+  The model predicts **6-month CLTV** using historical transaction data (3 months). This provides actionable forecasts for revenue contribution.
 
-* [cite_start]**Predictive Modeling with XGBoost**: An **XGBoost model** is implemented to predict future CLTV[cite: 70]. [cite_start]The problem is framed as a classification task to predict a customer's LTV segment (e.g., Low, Mid, High LTV), which provides clear, actionable insights[cite: 474, 477].
+- **Predictive Modeling with XGBoost**:  
+  An **XGBoost classifier** is trained to predict a customer’s future LTV segment (Low / Mid / High), enabling targeted marketing and retention strategies.
 
 ---
 
 ## 🛠️ Methodology
 
-The project follows a structured workflow to ensure accurate and actionable predictions:
-
-1.  [cite_start]**Define Prediction Horizon**: A **6-month** prediction window was selected to balance actionable insights with short-term trends[cite: 19].
-2.  [cite_start]**Data Preparation**: The analysis focuses on data from UK-based customers, as this cohort represents the largest portion of the dataset[cite: 89, 93]. The data is cleaned and preprocessed for analysis.
-3.  [cite_start]**RFM Feature Engineering**: Recency, Frequency, and Monetary values are calculated for each customer using 3 months of historical data[cite: 22].
-4.  [cite_start]**K-Means Clustering for RFM Scores**: The **Elbow Method** is used to determine the optimal number of clusters for Recency, Frequency, and Revenue[cite: 127, 204]. [cite_start]K-Means clustering is then applied to assign customers to different groups[cite: 106].
-5.  [cite_start]**CLTV Calculation (Target Variable)**: The total revenue generated by each customer over the 6-month target period is calculated to serve as the CLTV for model training[cite: 383].
-6.  [cite_start]**Model Training**: The dataset is split into features (X) and a target (y)[cite: 507]. [cite_start]An XGBoost model is trained on the feature set to predict the LTV cluster for each customer[cite: 70].
-7.  [cite_start]**Segmentation and Insights**: Customers are segmented based on their predicted CLV, allowing for targeted marketing and retention strategies[cite: 42]. [cite_start]A strong positive correlation was found between the overall RFM score and 6-month CLV, confirming the model's validity[cite: 471].
+1. **Define Prediction Horizon** → 6-month prediction window selected to balance long-term and short-term insights.  
+2. **Data Preparation** → Focused on UK-based customers, cleaned and preprocessed transaction dataset.  
+3. **RFM Feature Engineering** → Recency, Frequency, and Monetary values calculated from a 3-month observation window.  
+4. **Clustering (K-Means)** → Elbow method used to determine optimal cluster numbers; customers grouped by RFM scores.  
+5. **Target Variable (CLTV)** → 6-month customer revenue computed to serve as the prediction target.  
+6. **Model Training** → Features (X) and target (y) prepared; **XGBoost** trained to predict LTV segments.  
+7. **Insights & Validation** → Strong correlation observed between RFM score and actual 6-month CLV, validating the model.  
 
 ---
 
 ## 💻 Technologies and Libraries Used
 
-* **Programming Language**: Python
-* **Core Libraries**:
-    * [cite_start]`pandas` for data manipulation and analysis[cite: 60].
-    * [cite_start]`numpy` for numerical operations[cite: 64].
-    * [cite_start]`scikit-learn` for K-Means clustering and machine learning utilities[cite: 62, 66].
-    * [cite_start]`xgboost` for building the predictive model[cite: 70].
-* **Visualization**:
-    * [cite_start]`matplotlib` & `seaborn` for static plots[cite: 63, 65].
-    * [cite_start]`plotly` for interactive visualizations[cite: 69].
+- **Language**: Python  
+- **Libraries**:  
+  - `pandas` → Data manipulation & analysis  
+  - `numpy` → Numerical computations  
+  - `scikit-learn` → K-Means clustering & ML utilities  
+  - `xgboost` → Gradient boosting model for CLTV prediction  
+- **Visualization**:  
+  - `matplotlib` & `seaborn` → Data visualization  
+  - `plotly` → Interactive plots  
 
 ---
+
+## 📊 Results & Business Value
+
+- High-value customers can be **identified and targeted** with personalized campaigns.  
+- **Retention strategies** can be prioritized for mid-value customers to prevent churn.  
+- Businesses can make **data-driven marketing decisions** instead of relying only on past trends.  
+
+---
+
+## 📂 Project Structure
+
