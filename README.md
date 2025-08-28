@@ -4,7 +4,7 @@
 
 ## 📈 Project Overview
 
-[cite_start]In modern business, understanding customer value is critical for maximizing returns on marketing investments[cite: 6, 8]. [cite_start]This project focuses on predicting **Customer Lifetime Value (CLV)**, which helps in identifying high-value customers, enhancing marketing ROI, and enabling proactive business strategies[cite: 4, 9].
+In modern business, understanding customer value is critical for maximizing returns on marketing investments[cite: 6, 8]. [cite_start]This project focuses on predicting **Customer Lifetime Value (CLV)**, which helps in identifying high-value customers, enhancing marketing ROI, and enabling proactive business strategies[cite: 4, 9].
 
 [cite_start]This analysis uses a dataset of customer transactions to engineer predictive features, perform **RFM (Recency, Frequency, Monetary) segmentation**, and build a machine learning model to forecast future customer value[cite: 9, 21]. [cite_start]The primary goal is to move beyond historical data and proactively predict which customers will be the most valuable over a future period[cite: 10].
 
@@ -53,4 +53,3 @@ The project follows a structured workflow to ensure accurate and actionable pred
     * [cite_start]`plotly` for interactive visualizations[cite: 69].
 
 ---
-
