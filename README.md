@@ -67,3 +67,26 @@ This analysis uses customer transaction data to engineer predictive features, pe
 
 ## 📂 Project Structure
 
+├── data/ # Dataset (raw & processed)
+├── notebooks/ # Jupyter/Kaggle notebooks
+├── src/ # Source code (feature engineering, modeling, utils)
+├── results/ # Model outputs, plots, and reports
+└── README.md # Project documentation
+
+
+
+---
+
+## 🚧 Future Work
+
+- Implement **survival analysis** for churn prediction  
+- Test **deep learning models** for CLV forecasting  
+- Integrate with a **real-time dashboard** for marketing teams  
+
+---
+
+## 🤝 Contributions
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to fork the repo and submit a pull request.  
+
